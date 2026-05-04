@@ -1,0 +1,133 @@
+<!--First time writing HTML code in a long ass time-->
+
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>German Driller</title>
+        <link rel="stylesheet" href="index.css">
+        <style>
+        .dropdownLevelDiv {
+            width: 160px;
+            padding: 10px;
+        }
+        .dropdownModeDiv {
+            width: 160px;
+            padding: 10px;
+        }
+        .dropdownTimerDiv {
+            width: 160px;
+            padding: 10px;
+        }
+        .dropdown-button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            /* background-color: #f9f9f9; */
+        }
+        /* Hide the Menu Items*/
+        .menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            min-width: 160px;
+        }
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .error {
+            color: red
+        }
+    </style>
+    </head>
+    <body>
+        <main>
+            <div>
+                <h2 id="scoreDisplay">0</h2>
+            </div>
+            <div class="timer-container">
+                <!-- <svg id="bomb" xmlns="http://www.w3.org/2000/svg" viewBox="-80 0 592 512"><path d="M459.1 52.4L442.6 6.5C440.7 2.6 436.5 0 432.1 0s-8.5 2.6-10.4 6.5L405.2 52.4l-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4c0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2c0-4.6-3-8.9-7.2-10.4L459.1 52.4zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9C256.5 100.3 232.7 96 208 96C93.1 96 0 189.1 0 304S93.1 512 208 512s208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg> -->
+                <div>
+                    <text id="timer">0:30</text>
+                </div>
+            </div>
+    
+            <div class="word">
+                
+                
+                <div>
+                    <h1 id="currentWordDisplay">Loading Word</h1>
+                    <input id="articleInputBox" placeholder="Input Article" autofocus autocomplete="off">
+                    
+                </div>
+                <div id="pluralDiv">
+                    die <input id="pluralInputBox" placeholder="Input Plural Form" autofocus autocomplete="off">
+                </div>
+            </div>
+            <div>
+                <button id="mySubmit">
+                    <img src="https://www.svgrepo.com/show/355015/form-next-link.svg"
+     	                alt="Start" style="width: 50px; height: 50px;">
+                    
+                </button>
+            </div>
+            <h2 class="error" id="errorDisplay"></h2>
+            <div class="btn-container">
+                
+                <button id="resetButton">
+                    <img src="https://www.svgrepo.com/show/514220/return.svg"
+     	                alt="Return" style="width: 50px; height: 50px;">                
+                </button>
+            </div>
+            <h1 id="title">German Driller</h1>
+            <div class="main-menu">
+                
+                <div class="dropdownLevelDiv">
+                    <div class="dropdown-button" id="dropdownLevel">Level: A1</div>
+
+                    <!-- Dropdown list items-->
+                    <div class="menu" id="optionsLevel">
+                        <div class="menu-item" id="niveau-a1">A1</div>
+                        <div class="menu-item" id="niveau-a2">A2</div>
+                        <div class="menu-item" id="niveau-b1">B1</div>
+                        <div class="menu-item" id="niveau-b2">B2</div>
+                        <div class="menu-item" id="niveau-c1">C1</div>
+                        <div class="menu-item" id="niveau-c2">C2</div>
+                    </div>
+                </div>
+                <div class="dropdownModeDiv">
+                    <div class="dropdown-button" id="dropdownMode">Mode: Article</div>
+
+                    <!-- Dropdown list items-->
+                    <div class="menu" id="optionsMode">
+                        <div class="menu-item" id="mode-article">Article</div>
+                        <div class="menu-item" id="mode-plural">Plural</div>
+                        <div class="menu-item" id="mode-both">Both</div>
+                    </div>
+                </div>
+                <div class="dropdownTimerDiv">
+                    <div class="dropdown-button" id="dropdownTimer">Timer: Disabled</div>
+
+                    <!-- Dropdown list items-->
+                    <div class="menu" id="optionsTimer">
+                        <div class="menu-item" id="timer-disable">Disable</div>
+                        <div class="menu-item" id="timer-enable">Enable</div>
+                    </div>
+                </div>
+                <button id="startButton">
+                    <img src="https://www.svgrepo.com/show/366450/shutdown-small.svg"
+     	            alt="Start" style="width: 50px; height: 50px;">
+                </button>
+            </div>
+            
+            
+
+
+        </main>
+
+        <script type="module" src=".\main.js"></script>
+    </body>
+</html>
