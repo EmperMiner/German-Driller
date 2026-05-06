@@ -194,6 +194,8 @@ async function driller() {
     transition_ui(true);
     scoreArticle = 0, scorePlural = 0
 
+    filtered = Object.values(data).filter(item => item["frequency"] > word_fre).filter(item => item["translations"]["en"] != "");
+
     if(enable_timer === TIMER.TIMER) {
         secondsLeft = 30
         document.getElementById("timer").style.display = "block";
@@ -216,6 +218,7 @@ async function driller() {
 
     while(ongoing) {
         rand_i = Math.floor(Math.random() * filtered.length); // Find a random word
+        
         let helper_article = "";
         if (drill_mode == MODE.PLURAL) { 
             helper_article = dict_to_article(filtered[rand_i]["gender"]); 
@@ -223,6 +226,7 @@ async function driller() {
         } else {
             document.getElementById("articleInputBox").focus();
         }
+        document.getElementById("translations").textContent = filtered[rand_i]["translations"]["en"][0];
         document.getElementById("currentWordDisplay").textContent = `${helper_article} ${filtered[rand_i]["lemma"]}`;
         
         await waitUserInput();
